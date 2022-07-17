@@ -1,5 +1,6 @@
 import "../style/Diet.css";
 
+
 export default function Meal({ meal }) {
     console.log("meal-------", meal);
     function dayOfWeekAsString(dayIndex) {
@@ -8,14 +9,10 @@ export default function Meal({ meal }) {
 
     return (
         < article >
-            <h1>{dayOfWeekAsString(meal.weekDay)}</h1>
-            <h2>{meal.diet}</h2>
+            <h1 style={{ fontSize: "20px" }}>{dayOfWeekAsString(meal.weekDay)}</h1>
+            <h2 style={{ fontSize: "16px" }}>{meal.diet}</h2>
             {/* <img src={imageUrl} alt="recipe" /> */}
-
-            <ul className="instructions">
-                <li >Number of servings: 5</li>
-            </ul>
-
+            <p style={{ fontSize: "10px" }}>Number of servings: 5</p>
             <a href={meal.sourceUrl} class="purple">Go to Recipe</a>
         </article >
     )

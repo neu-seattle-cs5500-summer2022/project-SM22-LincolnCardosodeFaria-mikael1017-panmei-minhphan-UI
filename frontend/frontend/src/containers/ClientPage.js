@@ -7,7 +7,6 @@ import WorkoutPlan from '../components/WorkoutPlan';
 import Diet from '../components/Diet';
 import Attendence from '../components/Attendence';
 import Sidebar from '../components/Sidebar';
-import DietLarge from '../components/Diet-Large';
 
 const Client = props => {
     return (
@@ -16,11 +15,11 @@ const Client = props => {
             <Container>
                 <Row>
                     <Col><Diet /></Col>
-                    <Col><Schedule /></Col>
-                    <Col><Attendence /></Col>
+                    <Col><WorkoutPlan /></Col>
                 </Row>
                 <Row>
-                    <Col><WorkoutPlan /></Col>
+                    <Col><Schedule /></Col>
+                    <Col><Attendence /></Col>
                 </Row>
             </Container>
         </div>

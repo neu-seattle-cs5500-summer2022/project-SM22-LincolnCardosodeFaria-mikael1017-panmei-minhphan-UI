@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-
+import "../style/Calendar.css";
 
 const WorkoutPlan = props => {
     const [events, setEvents] = useState([
@@ -36,16 +36,19 @@ const WorkoutPlan = props => {
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 initialView="dayGridMonth"
                 headerToolbar={{
-                    center: 'dayGridMonth,timeGridWeek,timeGridDay new',
+                    center: 'dayGridMonth,timeGridWeek,timeGridDay',
                 }}
-                customButtons={{
-                    new: {
-                        text: 'new',
-                        click: () => console.log('new event'),
-                    },
-                }}
+                // headerToolbar={{
+                //     center: 'dayGridMonth,timeGridWeek,timeGridDay new',
+                // }}
+                // customButtons={{
+                //     new: {
+                //         text: 'new',
+                //         click: () => console.log('new event'),
+                //     },
+                // }}
                 events={events}
-                eventColor="red"
+                eventColor="green"
                 nowIndicator
                 dateClick={(e) => console.log(e.dateStr)}
                 eventClick={(e) => console.log(e.event.id)}
