@@ -14,7 +14,7 @@ function Diet({ user }) {
     const getMealData = id => {
       GymDataService.findDiet(id)
         .then(response => {
-          console.log("diet-large---------------- ", response);
+          console.log("diet---------------- ", response);
           setMealData(response.data);
         })
         .catch(e => {
@@ -29,16 +29,17 @@ function Diet({ user }) {
       {/* mealData.data.map(weeklyMeal => {
                 return(
                 weeklyMeal.foods.map(everyDayMeal => {
-                <Accordion defaultActiveKey="0">
-                    <Accordion.Item eventKey="0">
-                        <Accordion.Header>{everyDayMeal.name}</Accordion.Header>
-                        <Accordion.Body>
-                            foods
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            }))
+        <Accordion defaultActiveKey="0">
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>{everyDayMeal.name}</Accordion.Header>
+            <Accordion.Body>
+              foods
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      }))
             }) */}
+      Diet place holder
 
     </div>
 

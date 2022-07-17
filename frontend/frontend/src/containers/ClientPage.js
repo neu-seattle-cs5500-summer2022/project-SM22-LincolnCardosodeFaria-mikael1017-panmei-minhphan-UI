@@ -15,17 +15,12 @@ const Client = props => {
             <Sidebar />
             <Container>
                 <Row>
-                    {/* <Col><Diet /></Col> */}
-                    <Col>
-                        <DietLarge />
-                    </Col>
-                    <Col>
-                        <WorkoutPlan />
-                    </Col>
-                </Row>
-                <Row>
+                    <Col><Diet /></Col>
                     <Col><Schedule /></Col>
                     <Col><Attendence /></Col>
+                </Row>
+                <Row>
+                    <Col><WorkoutPlan /></Col>
                 </Row>
             </Container>
         </div>
