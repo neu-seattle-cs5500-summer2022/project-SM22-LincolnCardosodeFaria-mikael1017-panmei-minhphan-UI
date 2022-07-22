@@ -16,15 +16,14 @@ const UsersContainer = styled.div`
   overflow-y: scroll;
 `;
 
-function UserEditPage(props) {
+function EditDietPage(props) {
   let { id } = useParams();
 
   return (
     <div>
       <MyNavbar />
-
       <AdminDiet id={id} />
-      <Link to={`/admin/1`}>
+      <Link to={`/user/${id}`}>
         <Button variant="warning" onClick={() => {}}>
           Back
         </Button>
@@ -33,4 +32,4 @@ function UserEditPage(props) {
   );
 }
 
-export default UserEditPage;
+export default EditDietPage;
