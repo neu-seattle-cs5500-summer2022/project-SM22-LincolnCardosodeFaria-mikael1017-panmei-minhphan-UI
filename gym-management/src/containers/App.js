@@ -9,6 +9,8 @@ import AdminPage from "./AdminPage";
 import EditDietPage from "./EditDietPage";
 import DietLargePage from "../components/Diet-Large";
 import EditClientPage from "../containers/EditClientPage";
+import EditSchedulePage from "../containers/EditSchedulePage";
+import EditWorkoutPage from "../containers/EditWorkoutPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path={"admin/:id"} element={<AdminPage />} />
         <Route path={"user/:id"} element={<EditClientPage />} />
         <Route path={"user/diet/:id"} element={<EditDietPage />} />
+        <Route path={"user/workout/:id"} element={<EditWorkoutPage />} />
+        <Route path={"user/schedule/:id"} element={<EditSchedulePage />} />
         <Route path={"client/:id/diet"} element={<DietLargePage />} />
       </Routes>
     </div>
