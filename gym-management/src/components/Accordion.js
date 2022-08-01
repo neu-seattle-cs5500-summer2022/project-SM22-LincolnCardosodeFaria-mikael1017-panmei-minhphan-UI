@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
+import Stack from 'react-bootstrap/Stack';
 
 const Accordion = ({ title, content }) => {
-    const [isActive, setIsActive] = useState(false);
-
     return (
-        <div className="accordion-item">
-            <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
+        <Stack gap={5}>
+            <div className="accordion-item">
                 <div>{title}</div>
-                <div>{isActive ? '-' : '+'}</div>
+                <div>{content}</div>
             </div>
-            {isActive && <div className="accordion-content">{content}</div>}
-        </div>
+        </Stack>
     );
 };
 

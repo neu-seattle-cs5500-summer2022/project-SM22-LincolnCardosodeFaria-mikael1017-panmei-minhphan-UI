@@ -74,7 +74,7 @@ img {
 }
 
 article {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     padding: 2rem;
     margin: 0 1rem;

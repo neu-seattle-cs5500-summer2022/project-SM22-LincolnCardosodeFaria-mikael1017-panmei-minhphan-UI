@@ -28,9 +28,9 @@ import "react-pro-sidebar/dist/css/styles.css";
 import "../style/Sidebar.css";
 
 
-const Sidebar = () => {
+const Sidebar = (user, name, photo) => {
+    console.log("=========name=========", name);
     let params = useParams();
-
     //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false);
 
@@ -49,6 +49,7 @@ const Sidebar = () => {
                         <div className="logotext">
                             {/* small and big change using menucollapse state */}
                             <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
+
                         </div>
                         <div className="closemenu" onClick={menuIconClick}>
                             {/* changing menu collapse icon on click */}
