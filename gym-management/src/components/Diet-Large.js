@@ -5,6 +5,7 @@ import MealList from "./MealList"
 import "../style/Diet.css";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Banner from "./Banner"
 
 //display in client sub-tab
 const Diet = ({ user }) => {
@@ -29,6 +30,7 @@ const Diet = ({ user }) => {
 
     return (
         <div>
+            {Banner}
             <Navbar expand="lg" variant="light" bg="light">
                 <Container>
                     <Navbar.Brand href={`/client/${params.id}`} id="sidebarlink">Back</Navbar.Brand>

@@ -28,7 +28,6 @@ const Client = (user) => {
                     <Col><WorkoutPlan /></Col>
                 </Row>
                 <Row>
-                    <Col><Schedule /></Col>
                     <Col><Attendence /></Col>
                 </Row>
             </Container>

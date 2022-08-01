@@ -34,21 +34,13 @@ const WorkoutPlan = props => {
 
     return (
         <div className='WorkoutPlan'>
+            <h2> Workout Plan</h2>
             <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 initialView="dayGridMonth"
                 headerToolbar={{
-                    center: 'dayGridMonth,timeGridWeek,timeGridDay',
+                    center: 'dayGridMonth,timeGridWeek',
                 }}
-                // headerToolbar={{
-                //     center: 'dayGridMonth,timeGridWeek,timeGridDay new',
-                // }}
-                // customButtons={{
-                //     new: {
-                //         text: 'new',
-                //         click: () => console.log('new event'),
-                //     },
-                // }}
                 events={events}
                 eventColor="green"
                 nowIndicator

@@ -3,7 +3,7 @@ import GymDataService from '../services/callAPI';
 import { useParams } from 'react-router-dom';
 import Stack from 'react-bootstrap/Stack';
 import "../style/Diet.css";
-import Accordion from "./Accordion";
+import DietItem from "./DietItem";
 
 //display in client main page
 const Diet = () => {
@@ -24,6 +24,10 @@ const Diet = () => {
     getMealData(params.id);
   }, [params.id]);
 
+  function dayOfWeekAsString(dayIndex) {
+    return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayIndex] || '';
+  }
+
   // const accordionData = [
   //   {
   //     title: 'Section 1',
@@ -42,10 +46,10 @@ const Diet = () => {
 
   return (
     <div>
-      <h1>Diet Plan</h1>
-      <Stack gap={2}>
+      <h2>Diet Plan</h2>
+      <Stack gap={1}>
         {mealData.map(({ weekDay, diet }) => (
-          <Accordion title={weekDay} content={diet} />
+          <DietItem title={dayOfWeekAsString(weekDay)} content={diet} />
         ))}
       </Stack>
     </div>
