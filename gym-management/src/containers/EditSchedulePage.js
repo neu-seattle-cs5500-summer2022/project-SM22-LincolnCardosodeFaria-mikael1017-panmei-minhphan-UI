@@ -6,15 +6,6 @@ import { useParams, Link } from "react-router-dom";
 import MyNavbar from "../components/Navbar";
 import { Button } from "react-bootstrap";
 
-const AdminContainer = styled.div`
-  margin: 25px;
-`;
-const UsersContainer = styled.div`
-  max-width: 25%;
-  max-height: 80vh;
-  overflow-y: scroll;
-`;
-
 function EditSchedulePage(props) {
   let { id } = useParams();
 

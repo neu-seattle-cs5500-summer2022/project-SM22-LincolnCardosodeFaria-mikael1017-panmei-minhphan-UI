@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Users from "./Users";
 import axios from "axios";
-import styled from "styled-components";
-import AdminDiet from "../components/AdminDiet";
 import { useParams, Link } from "react-router-dom";
 import MyNavbar from "../components/Navbar";
 import { Button, Card } from "react-bootstrap";
-
-const AdminContainer = styled.div`
-  margin: 25px;
-`;
-const UsersContainer = styled.div`
-  max-width: 25%;
-  max-height: 80vh;
-  overflow-y: scroll;
-`;
 
 function EditClientPage(props) {
   let { id } = useParams();
   const [userInfo, setUserInfo] = useState([]);
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.cropfix.ca",
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const getUser = () => {
@@ -44,36 +32,44 @@ function EditClientPage(props) {
   return (
     <div>
       <MyNavbar />
+      <h1> Edit for {userInfo.fullname} </h1>
       <Card className="m-5 border-0" style={{ color: "#000" }}>
         <Card.Body>
-          <Card.Title>Edit Diet for {userInfo.fullname}</Card.Title>
+          <Card.Title>Create a Diet</Card.Title>
           <Link to={`/user/diet/${id}`}>
             <Button variant="primary" className="mb-3" onClick={() => {}}>
-              Edit Diet
+              Create
             </Button>
           </Link>
         </Card.Body>
       </Card>
       <Card className="m-5 border-0" style={{ color: "#000" }}>
         <Card.Body>
-          <Card.Title>Edit Workout for {userInfo.fullname}</Card.Title>
+          <Card.Title>Create a Workout</Card.Title>
           <Link to={`/user/workout/${id}`}>
             <Button variant="primary" className="mb-3" onClick={() => {}}>
-              Edit Workout
+              Create
             </Button>
           </Link>
         </Card.Body>
       </Card>
       <Card className="m-5 border-0" style={{ color: "#000" }}>
         <Card.Body>
-          <Card.Title>Edit Schedule for {userInfo.fullname}</Card.Title>
+          <Card.Title>Create a Schedule</Card.Title>
           <Link to={`/user/schedule/${id}`}>
             <Button variant="primary" className="mb-3" onClick={() => {}}>
-              Edit Schedule
+              Create
             </Button>
           </Link>
         </Card.Body>
       </Card>
+      <div>
+        <Link to={`/admin/${id}`}>
+          <Button variant="warning" onClick={() => {}}>
+            Back to see all clients
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
