@@ -24,7 +24,7 @@ function SignupPage() {
   const [phone, setPhone] = useState("");
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.cropfix.ca",
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const createUser = (e) => {

@@ -17,7 +17,7 @@ function AdminPage() {
   const [users, setUsers] = useState([]);
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.cropfix.ca",
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const getAllUsers = () => {

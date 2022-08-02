@@ -16,7 +16,7 @@ function LoginPage() {
   const [password, setPassword] = useState("");
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.cropfix.ca",
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const goAdminPage = (id) => {
