@@ -29,7 +29,7 @@ const Attendence = () => {
     var dates = getDates(new Date(), new Date().addDays(30));
     return (
         <div className='Attendence'>
-            <h2>Attendence</h2>
+            <h2>Attendance</h2>
             <LineChart data={dates} />
         </div>
     )
