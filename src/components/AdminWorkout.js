@@ -17,7 +17,7 @@ export default function AdminWorkout(props) {
   const [endDate, setEndDate] = useState("");
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.azurewebsites.net",
+    baseURL: "http://gymmanagement.azurewebsites.net",
   });
 
   const createWorkout = (e) => {

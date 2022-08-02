@@ -9,7 +9,7 @@ function EditClientPage(props) {
   const [userInfo, setUserInfo] = useState([]);
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.azurewebsites.net",
+    baseURL: "http://gymmanagement.azurewebsites.net",
   });
 
   const getUser = () => {
@@ -37,7 +37,7 @@ function EditClientPage(props) {
         <Card.Body>
           <Card.Title>Create a Diet</Card.Title>
           <Link to={`/user/diet/${id}`}>
-            <Button variant="primary" className="mb-3" onClick={() => {}}>
+            <Button variant="primary" className="mb-3" onClick={() => { }}>
               Create
             </Button>
           </Link>
@@ -47,7 +47,7 @@ function EditClientPage(props) {
         <Card.Body>
           <Card.Title>Create a Workout</Card.Title>
           <Link to={`/user/workout/${id}`}>
-            <Button variant="primary" className="mb-3" onClick={() => {}}>
+            <Button variant="primary" className="mb-3" onClick={() => { }}>
               Create
             </Button>
           </Link>
@@ -57,7 +57,7 @@ function EditClientPage(props) {
         <Card.Body>
           <Card.Title>Create a Schedule</Card.Title>
           <Link to={`/user/schedule/${id}`}>
-            <Button variant="primary" className="mb-3" onClick={() => {}}>
+            <Button variant="primary" className="mb-3" onClick={() => { }}>
               Create
             </Button>
           </Link>
@@ -65,7 +65,7 @@ function EditClientPage(props) {
       </Card>
       <div>
         <Link to={`/admin/${id}`}>
-          <Button variant="warning" onClick={() => {}}>
+          <Button variant="warning" onClick={() => { }}>
             Back to see all clients
           </Button>
         </Link>

@@ -12,7 +12,7 @@ function AdminDiet(props) {
   const [diet, setDiet] = useState("");
   const [weekDay, setWeekDay] = useState(0);
   const instance = axios.create({
-    baseURL: "https://gymmanagement.azurewebsites.net",
+    baseURL: "http://gymmanagement.azurewebsites.net",
   });
 
   const createDiet = (e) => {
