@@ -4,7 +4,6 @@ import { Button, Card, ListGroup, Form } from "react-bootstrap";
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { parseISO } from "date-fns";
 
 const FormContainer = styled.div`
   margin: auto;
@@ -53,7 +52,6 @@ export default function AdminWorkout(props) {
     <div>
       <FormContainer className="mb-3">
         <Form onSubmit={createWorkout}>
-          <Form.Label>Create a workout </Form.Label>
           <Form.Group className="mb-3">
             <Form.Control
               as="textarea"
@@ -64,6 +62,7 @@ export default function AdminWorkout(props) {
             />
           </Form.Group>
           <Form.Group>
+            <Form.Label>Number of sets</Form.Label>
             <Form.Control
               as="select"
               className="mb-3"
@@ -78,6 +77,7 @@ export default function AdminWorkout(props) {
             </Form.Control>
           </Form.Group>
           <>
+            <div>Start date</div>
             <DatePicker
               name="startDate"
               selected={Date.parse(startDate)}
@@ -88,6 +88,7 @@ export default function AdminWorkout(props) {
               }}
             />
 
+            <div>End date</div>
             <DatePicker
               name="endDate"
               dateFormat="yyyy-MM-dd"
