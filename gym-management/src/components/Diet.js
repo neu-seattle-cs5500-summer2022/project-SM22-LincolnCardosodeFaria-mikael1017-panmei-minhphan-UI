@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GymDataService from '../services/callAPI';
 import { useParams } from 'react-router-dom';
 import Stack from 'react-bootstrap/Stack';
-import "../style/Diet.css";
+// import "../style/Diet.css";
 import DietItem from "./DietItem";
 
 //display in client main page
@@ -27,22 +27,6 @@ const Diet = () => {
   function dayOfWeekAsString(dayIndex) {
     return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayIndex] || '';
   }
-
-  // const accordionData = [
-  //   {
-  //     title: 'Section 1',
-  //     content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-  //     laborum cupiditate possimus labore, hic temporibus velit dicta earum`
-  //   },
-  //   {
-  //     title: 'Section 2',
-  //     content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam`
-  //   },
-  //   {
-  //     title: 'Section 3',
-  //     content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti`
-  //   }
-  // ];
 
   return (
     <div>

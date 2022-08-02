@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GymDataService from '../services/callAPI';
 import { useParams } from 'react-router-dom';
 import MealList from "./MealList"
-import "../style/Diet.css";
+// import "../style/Diet.css";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 

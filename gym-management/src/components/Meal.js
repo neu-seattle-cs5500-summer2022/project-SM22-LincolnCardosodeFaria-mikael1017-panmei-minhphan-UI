@@ -1,4 +1,4 @@
-import "../style/Diet.css";
+// import "../style/Diet.css";
 
 export default function Meal({ meal }) {
     console.log("meal-------", meal);
