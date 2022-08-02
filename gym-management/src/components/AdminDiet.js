@@ -12,7 +12,7 @@ function AdminDiet(props) {
   const [diet, setDiet] = useState("");
   const [weekDay, setWeekDay] = useState(0);
   const instance = axios.create({
-    baseURL: "https://gymmanagement.cropfix.ca",
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const createDiet = (e) => {
@@ -53,7 +53,6 @@ function AdminDiet(props) {
               rows={4}
               type="diet"
               placeholder="Description of the diet"
-              value={diet}
               onChange={(e) => setDiet(e.target.value)}
             />
           </Form.Group>
@@ -61,7 +60,7 @@ function AdminDiet(props) {
             <Form.Control
               as="select"
               className="mb-3"
-              value={weekDay}
+              defaultValue={1}
               onChange={(e) => setWeekDay(e.target.value)}
             >
               <option value={1}> Monday </option>
