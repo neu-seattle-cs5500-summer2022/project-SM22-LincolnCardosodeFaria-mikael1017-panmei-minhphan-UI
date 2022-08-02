@@ -20,6 +20,7 @@ const Client = (user) => {
                     <h2 class="text-white text-4xl">Dashboard</h2>
                 </aside>
 
+
                 <main class="grid grid-cols-2 gap-4 place-content-center">
                     <div class="bg-yellow-300 p-10">
                         <Diet />
