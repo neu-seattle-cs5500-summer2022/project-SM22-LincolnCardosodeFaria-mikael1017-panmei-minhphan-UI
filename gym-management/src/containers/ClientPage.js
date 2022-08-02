@@ -16,8 +16,8 @@ const Client = (user) => {
     return (
         <body>
             <div class="flex place-content-center">
-                <aside class="w-44 fixed left-0 top-0 h-screen bg-slate-700 p-10">
-                    <h1 class="text-white text-4xl">Sidebar</h1>
+                <aside class="w-45 fixed left-0 top-0 h-screen bg-slate-700 p-10">
+                    <h2 class="text-white text-4xl">Dashboard</h2>
                 </aside>
 
                 <main class="grid grid-cols-2 gap-4 place-content-center">
@@ -27,7 +27,7 @@ const Client = (user) => {
                     <div class="bg-purple-50 p-10">
                         <WorkoutPlan />
                     </div>
-                    <div class="bg-slate-300 p-10">
+                    <div class="col-span-2 bg-blue-200 p-10">
                         <Attendence />
                     </div>
 
