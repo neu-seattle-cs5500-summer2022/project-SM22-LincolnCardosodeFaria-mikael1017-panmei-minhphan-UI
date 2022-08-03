@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import WorkoutPlan from '../components/WorkoutPlan';
 import Diet from '../components/Diet';
 import Attendence from '../components/Attendence';
+// import Sidebar from '../components/Sidebar';
+import photo from "../download.jpg";
+
 
 const Client = (user) => {
     const [name, setName] = useState("none user");
@@ -9,32 +12,30 @@ const Client = (user) => {
 
     useEffect(() => {
         setName("test User");
-        setPhoto("../image/images.jfif");
     }, []);
 
-    console.log("=========name=========", name);
+    console.log("=========user=========", user);
     return (
-        <body>
-            <div class="flex place-content-center">
-                <aside class="w-45 fixed left-0 top-0 h-screen bg-slate-700 p-10">
-                    <h2 class="text-white text-4xl">Dashboard</h2>
+        <body className="py-6">
+            <div class="grid grid-cols-12 gap-3 place-content-center">
+                {/* <Sidebar /> */}
+                <aside class="w-36 fixed left-0 top-0 h-screen bg-slate-700 p-1">
+                    <p class="text-white font-sans text-xl">Dashboard</p>
+                    <p class="text-white font-sans text-base">{name}</p>
                 </aside>
+                <div class="col-start-3 col-span-4  bg-yellow-300  p-3">
+                    <Diet />
+                </div>
+                <div class="col-span-5 bg-slate-200 p-3">
+                    <WorkoutPlan />
+                </div>
+                <div class="col-start-3 col-span-9 bg-blue-200  p-3">
+                    <Attendence />
+                </div>
 
-
-                <main class="grid grid-cols-2 gap-4 place-content-center">
-                    <div class="bg-yellow-300 p-10">
-                        <Diet />
-                    </div>
-                    <div class="bg-purple-50 p-10">
-                        <WorkoutPlan />
-                    </div>
-                    <div class="col-span-2 bg-blue-200 p-10">
-                        <Attendence />
-                    </div>
-
-                </main>
             </div>
-        </body>
+
+        </body >
     );
 }
 

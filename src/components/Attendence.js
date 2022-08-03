@@ -28,8 +28,8 @@ const Attendence = () => {
 
     var dates = getDates(new Date(), new Date().addDays(30));
     return (
-        <div className='Attendence'>
-            <h2>Attendance</h2>
+        <div>
+            <p class="font-sans text-xl font-semibold">Attendance</p>
             <LineChart data={dates} />
         </div>
     )

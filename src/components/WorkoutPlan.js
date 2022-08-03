@@ -31,10 +31,9 @@ const WorkoutPlan = props => {
 
     //get events from API
     // useEffect
-
     return (
-        <div className='WorkoutPlan'>
-            <h2> Workout Plan</h2>
+        <div className='App'>
+            <p class="font-sans text-xl font-semibold"> Workout Plan</p>
             <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 initialView="dayGridMonth"

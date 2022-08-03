@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import GymDataService from '../services/callAPI';
 import { useParams } from 'react-router-dom';
 import Stack from 'react-bootstrap/Stack';
-// import "../style/Diet.css";
 import DietItem from "./DietItem";
 
 //display in client main page
@@ -30,7 +29,7 @@ const Diet = () => {
 
   return (
     <div>
-      <h2>Diet Plan</h2>
+      <p class="font-sans text-xl font-semibold">Diet Plan</p>
       <Stack gap={1}>
         {mealData.map(({ weekDay, diet }) => (
           <DietItem title={dayOfWeekAsString(weekDay)} content={diet} />
