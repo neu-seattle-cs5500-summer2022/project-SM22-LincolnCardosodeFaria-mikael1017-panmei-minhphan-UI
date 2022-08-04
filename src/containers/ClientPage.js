@@ -21,6 +21,12 @@ const Client = (user) => {
                 <aside class="w-36 fixed left-0 top-0 h-screen bg-slate-700 p-1">
                     <p class="text-white font-sans text-xl">Dashboard</p>
                     <p class="text-white font-sans text-base">{name}<br></br>Welcome!</p>
+                    <a href="http://www.stackoverflow.com/" target="_blank">
+                        <button class="btn btn-secondary">Check-in</button>
+                    </a>
+                    {/* <a href="/" target="_blank">
+                        <button class="btn btn-secondary">Back</button>
+                    </a> */}
                 </aside>
                 <div class="rounded-lg col-start-3 col-span-4  bg-yellow-300  p-3">
                     <Diet />
