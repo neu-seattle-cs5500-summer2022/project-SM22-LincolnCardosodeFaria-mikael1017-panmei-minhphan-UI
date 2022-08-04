@@ -7,9 +7,9 @@ import React from "react";
 import ClientPage from "./ClientPage";
 import AdminPage from "./AdminPage";
 import EditDietPage from "./EditDietPage";
-import EditClientPage from "../containers/EditClientPage";
-import EditSchedulePage from "../containers/EditSchedulePage";
-import EditWorkoutPage from "../containers/EditWorkoutPage";
+import EditClientPage from "./EditClientPage";
+import EditSchedulePage from "./EditSchedulePage";
+import EditWorkoutPage from "./EditWorkoutPage";
 
 function App() {
   return (

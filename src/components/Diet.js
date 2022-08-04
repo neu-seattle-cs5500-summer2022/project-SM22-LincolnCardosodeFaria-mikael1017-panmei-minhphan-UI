@@ -1,26 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import GymDataService from '../services/callAPI';
 import { useParams } from 'react-router-dom';
 import Stack from 'react-bootstrap/Stack';
 import DietItem from "./DietItem";
+import axios from "axios";
+
 
 //display in client main page
 const Diet = () => {
   let params = useParams();
   const [mealData, setMealData] = useState([]);
 
+  const instance = axios.create({
+    baseURL: process.env.REACT_APP_API_BASE_URL,
+  });
+
+  const findDiet = (id) => {
+    instance
+      .get(`/Diet/GetAllDietsByUser?userId=${id}`)
+      .then(function (response) {
+        setMealData(response.data);
+        // console.log("diet---------------- ", response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
-    const getMealData = id => {
-      GymDataService.findDiet(id)
-        .then(response => {
-          console.log("diet---------------- ", response);
-          setMealData(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    };
-    getMealData(params.id);
+    findDiet(params.id);
   }, [params.id]);
 
   function dayOfWeekAsString(dayIndex) {

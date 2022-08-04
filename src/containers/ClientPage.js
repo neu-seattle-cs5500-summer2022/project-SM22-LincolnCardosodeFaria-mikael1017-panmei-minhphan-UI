@@ -8,10 +8,9 @@ import photo from "../download.jpg";
 
 const Client = (user) => {
     const [name, setName] = useState("none user");
-    const [photo, setPhoto] = useState("none user");
 
     useEffect(() => {
-        setName("test User");
+        setName("huskey");
     }, []);
 
     console.log("=========user=========", user);
@@ -21,15 +20,15 @@ const Client = (user) => {
                 {/* <Sidebar /> */}
                 <aside class="w-36 fixed left-0 top-0 h-screen bg-slate-700 p-1">
                     <p class="text-white font-sans text-xl">Dashboard</p>
-                    <p class="text-white font-sans text-base">{name}</p>
+                    <p class="text-white font-sans text-base">{name}<br></br>Welcome!</p>
                 </aside>
-                <div class="col-start-3 col-span-4  bg-yellow-300  p-3">
+                <div class="rounded-lg col-start-3 col-span-4  bg-yellow-300  p-3">
                     <Diet />
                 </div>
-                <div class="col-span-5 bg-slate-200 p-3">
+                <div class="rounded-lg col-span-5 bg-slate-200 p-3">
                     <WorkoutPlan />
                 </div>
-                <div class="col-start-3 col-span-9 bg-blue-200  p-3">
+                <div class="rounded-lg col-start-3 col-span-9 bg-blue-200  p-3">
                     <Attendence />
                 </div>
 
