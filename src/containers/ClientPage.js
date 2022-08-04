@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import WorkoutPlan from '../components/WorkoutPlan';
 import Diet from '../components/Diet';
 import Attendence from '../components/Attendence';
+import { useParams } from 'react-router-dom';
+
 // import Sidebar from '../components/Sidebar';
-import photo from "../download.jpg";
 
 
 const Client = (user) => {
+    let params = useParams();
     const [name, setName] = useState("none user");
 
     useEffect(() => {
@@ -15,18 +17,15 @@ const Client = (user) => {
 
     console.log("=========user=========", user);
     return (
-        <body className="py-6">
+        <body class="py-6">
             <div class="grid grid-cols-12 gap-3 place-content-center">
                 {/* <Sidebar /> */}
                 <aside class="w-36 fixed left-0 top-0 h-screen bg-slate-700 p-1">
                     <p class="text-white font-sans text-xl">Dashboard</p>
                     <p class="text-white font-sans text-base">{name}<br></br>Welcome!</p>
-                    <a href="http://www.stackoverflow.com/" target="_blank">
+                    <a href={params.id + '/checkin'} target="_blank">
                         <button class="btn btn-secondary">Check-in</button>
                     </a>
-                    {/* <a href="/" target="_blank">
-                        <button class="btn btn-secondary">Back</button>
-                    </a> */}
                 </aside>
                 <div class="rounded-lg col-start-3 col-span-4  bg-yellow-300  p-3">
                     <Diet />

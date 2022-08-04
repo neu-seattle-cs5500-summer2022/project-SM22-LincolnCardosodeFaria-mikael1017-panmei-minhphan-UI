@@ -10,6 +10,7 @@ import EditDietPage from "./EditDietPage";
 import EditClientPage from "./EditClientPage";
 import EditSchedulePage from "./EditSchedulePage";
 import EditWorkoutPage from "./EditWorkoutPage";
+import Checkin from "./Checkin";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="signup" element={<SignupPage />} />
         <Route path="login" element={<LoginPage />} />
+
         <Route path={"client/:id"} element={<ClientPage />} />
+        <Route path={"client/:id/checkin"} element={<Checkin />} />
 
         <Route path={"admin/:id"} element={<AdminPage />} />
         <Route path={"user/:id"} element={<EditClientPage />} />
