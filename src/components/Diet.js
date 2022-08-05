@@ -19,7 +19,7 @@ const Diet = () => {
       .get(`/Diet/GetAllDietsByUser?userId=${id}`)
       .then(function (response) {
         console.log("diet---------------- ", response);
-        if (!response.data.toLowerCase().includes("not found")) {
+        if (typeof (response.data) != 'string') {
           setMealData(response.data);
         }
       })

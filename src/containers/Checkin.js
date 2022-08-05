@@ -10,6 +10,9 @@ const Checkin = () => {
 
     const inputRef = useRef(null);
 
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
     const instance = axios.create({
         baseURL: "https://gymmanagement.azurewebsites.net",
     });
@@ -51,21 +54,25 @@ const Checkin = () => {
 
     return (
         <div class="py-6">
-            <p>
+            <h3>
                 How long you plan to spend today:
-            </p>
+            </h3>
+            <p>{date}</p>
             <input
+                style={{ height: 40, width: "50%", borderColor: 'gray', borderWidth: 1, marginBottom: 20 }}
                 ref={inputRef}
                 type="number"
                 step="0.5"
                 min="0.5"
                 max="10"
 
-            // placeholder="0.5"
+                placeholder="0.5"
             />
-            <Button type="submit" variant="primary" onClick={handleSubmit}>
-                Submit
-            </Button>
+            <div >
+                <Button type="submit" variant="primary" onClick={handleSubmit}>
+                    Submit
+                </Button>
+            </div>
         </div >
     );
 };

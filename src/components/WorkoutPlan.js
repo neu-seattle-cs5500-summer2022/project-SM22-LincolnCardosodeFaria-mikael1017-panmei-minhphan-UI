@@ -42,18 +42,22 @@ const WorkoutPlan = props => {
         instance
             .get(`/WorkOut/GetAllWorkoutByUser?userId=${id}`)
             .then(function (response) {
-                console.log("workoout response---------------- ", response);
-                if (!response.data.toLowerCase().includes("not found")) {
-                    const getEvents = response.data.map(e => {
-                        let obj = new Object();
-                        // obj[id] = e.id;
-                        // obj[title] = e.nameOfWorkout;
-                        // obj[start] = e.start;
-                        // obj[end] = e.end;
+                console.log("workout response---------------- ", response);
+                if (typeof (response.data) != 'string') {
+                    const arr = [];
+                    response.data.map(e => {
+                        let obj = {
+                            id: e.id,
+                            title: e.nameOfWorkout,
+                            start: e.start,
+                            end: e.end,
+                        };
+                        arr.push(obj);
+                        // console.log("workoout obj---------------- ", obj);
                     }
                     );
-                    setEvents(getEvents);
-                    console.log("workoout getEvents---------------- ", getEvents);
+                    console.log("workoout arr---------------- ", arr);
+                    setEvents(arr);
                 }
             })
             .catch(function (error) {
