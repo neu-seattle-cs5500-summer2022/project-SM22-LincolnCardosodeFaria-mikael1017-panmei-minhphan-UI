@@ -11,7 +11,6 @@ const Checkin = () => {
     const inputRef = useRef(null);
 
     const instance = axios.create({
-        // baseURL: process.env.REACT_APP_API_BASE_URL,
         baseURL: "https://gymmanagement.azurewebsites.net",
     });
 
