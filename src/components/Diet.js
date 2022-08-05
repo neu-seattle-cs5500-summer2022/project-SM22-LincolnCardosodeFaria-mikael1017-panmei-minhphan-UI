@@ -10,17 +10,18 @@ const Diet = () => {
   let params = useParams();
   const [mealData, setMealData] = useState([]);
 
-  console.log("process.env---------------- ", process.env);
   const instance = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL,
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const findDiet = (id) => {
     instance
       .get(`/Diet/GetAllDietsByUser?userId=${id}`)
       .then(function (response) {
-        setMealData(response.data);
-        // console.log("diet---------------- ", response);
+        console.log("diet---------------- ", response);
+        if (!response.data.toLowerCase().includes("not found")) {
+          setMealData(response.data);
+        }
       })
       .catch(function (error) {
         console.log(error);

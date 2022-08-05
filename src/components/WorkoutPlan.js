@@ -32,11 +32,10 @@ const WorkoutPlan = props => {
     // ]);
 
     //get events from API
-    // useEffect
     let params = useParams();
     const [events, setEvents] = useState([]);
     const instance = axios.create({
-        baseURL: process.env.REACT_APP_API_BASE_URL,
+        baseURL: "https://gymmanagement.azurewebsites.net",
     });
 
     const findEvent = (id) => {
@@ -44,16 +43,18 @@ const WorkoutPlan = props => {
             .get(`/WorkOut/GetAllWorkoutByUser?userId=${id}`)
             .then(function (response) {
                 console.log("workoout response---------------- ", response);
-                const getEvents = response.data.map(e => {
-                    let obj = new Object();
-                    // obj[id] = e.id;
-                    // obj[title] = e.nameOfWorkout;
-                    // obj[start] = e.start;
-                    // obj[end] = e.end;
+                if (!response.data.toLowerCase().includes("not found")) {
+                    const getEvents = response.data.map(e => {
+                        let obj = new Object();
+                        // obj[id] = e.id;
+                        // obj[title] = e.nameOfWorkout;
+                        // obj[start] = e.start;
+                        // obj[end] = e.end;
+                    }
+                    );
+                    setEvents(getEvents);
+                    console.log("workoout getEvents---------------- ", getEvents);
                 }
-                );
-                setEvents(getEvents);
-                console.log("workoout getEvents---------------- ", getEvents);
             })
             .catch(function (error) {
                 console.log(error);

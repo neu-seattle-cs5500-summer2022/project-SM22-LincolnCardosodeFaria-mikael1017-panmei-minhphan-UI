@@ -25,12 +25,12 @@ const Checkin = () => {
             'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
         const dayOfWeek = weekday[now.getDay()];
         const curTime = now.getHours() + ":" + now.getMinutes();
-        console.log("attendance put---------------- ", today);
-        console.log("attendance put---------------- ", dayOfWeek);
-        console.log("attendance put---------------- ", curTime);
-        console.log("attendance put---------------- ", time);
-        console.log("attendance put---------------- ", typeof (parseFloat(time)));
-        console.log("attendance put---------------- ", typeof (parseInt(params.id)));
+        // console.log("attendance put---------------- ", today);
+        // console.log("attendance put---------------- ", dayOfWeek);
+        // console.log("attendance put---------------- ", curTime);
+        // console.log("attendance put---------------- ", time);
+        // console.log("attendance put---------------- ", typeof (parseFloat(time)));
+        // console.log("attendance put---------------- ", typeof (parseInt(params.id)));
         instance.post("/Attendence/CreateAttence",
             {
                 date: today,
@@ -42,18 +42,18 @@ const Checkin = () => {
         )
             .then(function (response) {
                 console.log("attendance resp---------------- ", response);
+                alert("Success!");
             })
             .catch(function (error) {
                 console.log(error);
             });
     };
 
-    function dayOfWeekAsString(dayIndex) {
-        return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayIndex] || '';
-    }
-
     return (
         <div class="py-6">
+            <p>
+                How long you plan to spend today:
+            </p>
             <input
                 ref={inputRef}
                 type="number"
@@ -61,13 +61,11 @@ const Checkin = () => {
                 min="0.5"
                 max="10"
 
-                placeholder="0.5"
+            // placeholder="0.5"
             />
-            <div>
-                <Button type="submit" variant="primary" onClick={handleSubmit}>
-                    Submit
-                </Button>
-            </div>
+            <Button type="submit" variant="primary" onClick={handleSubmit}>
+                Submit
+            </Button>
         </div >
     );
 };
