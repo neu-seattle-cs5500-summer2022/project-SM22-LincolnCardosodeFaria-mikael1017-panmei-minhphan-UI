@@ -16,7 +16,7 @@ function LoginPage() {
   const [password, setPassword] = useState("");
 
   const instance = axios.create({
-    baseURL: "https://gymmanagement.cropfix.ca",
+    baseURL: "https://gymmanagement.azurewebsites.net",
   });
 
   const goAdminPage = (id) => {
@@ -40,7 +40,11 @@ function LoginPage() {
 
         console.log("LOGIN Response: ", response.data.authentication);
         if (response.data.authentication) {
-          goClientPage(24);
+          if (response.data.admin) {
+            goAdminPage(response.data.userId);
+          } else {
+            goClientPage(response.data.userId);
+          }
         } else {
           alert("Wrong credential");
         }
