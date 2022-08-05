@@ -1,47 +1,51 @@
-import Accordion from 'react-bootstrap/Accordion';
 import React, { useState, useEffect } from 'react';
-import GymDataService from '../services/callAPI';
 import { useParams } from 'react-router-dom';
-import "../style/Diet.css";
+import Stack from 'react-bootstrap/Stack';
+import DietItem from "./DietItem";
+import axios from "axios";
 
-function Diet({ user }) {
+
+//display in client main page
+const Diet = () => {
   let params = useParams();
-  console.log("diet-large params", params.id);
+  const [mealData, setMealData] = useState([]);
 
-  const [mealData, setMealData] = useState(null);
+  const instance = axios.create({
+    baseURL: "https://gymmanagement.azurewebsites.net",
+  });
+
+  const findDiet = (id) => {
+    instance
+      .get(`/Diet/GetAllDietsByUser?userId=${id}`)
+      .then(function (response) {
+        console.log("diet---------------- ", response);
+        if (typeof (response.data) != 'string') {
+          setMealData(response.data);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
-    const getMealData = id => {
-      GymDataService.findDiet(id)
-        .then(response => {
-          console.log("diet-large---------------- ", response);
-          setMealData(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    };
-    getMealData(params.id);
+    findDiet(params.id);
   }, [params.id]);
 
+  function dayOfWeekAsString(dayIndex) {
+    return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayIndex] || '';
+  }
+
   return (
-    <div id="compnents">
-      {/* mealData.data.map(weeklyMeal => {
-                return(
-                weeklyMeal.foods.map(everyDayMeal => {
-                <Accordion defaultActiveKey="0">
-                    <Accordion.Item eventKey="0">
-                        <Accordion.Header>{everyDayMeal.name}</Accordion.Header>
-                        <Accordion.Body>
-                            foods
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            }))
-            }) */}
-
+    <div>
+      <p class="font-sans text-xl font-semibold">Diet Plan</p>
+      <Stack gap={1}>
+        {mealData.map(({ weekDay, diet }) => (
+          <DietItem title={dayOfWeekAsString(weekDay)} content={diet} />
+        ))}
+      </Stack>
     </div>
-
   );
-}
+};
+
 export default Diet;

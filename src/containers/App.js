@@ -7,10 +7,10 @@ import React from "react";
 import ClientPage from "./ClientPage";
 import AdminPage from "./AdminPage";
 import EditDietPage from "./EditDietPage";
-import DietLargePage from "../components/Diet-Large";
-import EditClientPage from "../containers/EditClientPage";
-import EditSchedulePage from "../containers/EditSchedulePage";
-import EditWorkoutPage from "../containers/EditWorkoutPage";
+import EditClientPage from "./EditClientPage";
+import EditSchedulePage from "./EditSchedulePage";
+import EditWorkoutPage from "./EditWorkoutPage";
+import Checkin from "./Checkin";
 
 function App() {
   return (
@@ -19,14 +19,15 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="signup" element={<SignupPage />} />
         <Route path="login" element={<LoginPage />} />
+
         <Route path={"client/:id"} element={<ClientPage />} />
+        <Route path={"client/:id/checkin"} element={<Checkin />} />
 
         <Route path={"admin/:id"} element={<AdminPage />} />
         <Route path={"user/:id"} element={<EditClientPage />} />
         <Route path={"user/diet/:id"} element={<EditDietPage />} />
         <Route path={"user/workout/:id"} element={<EditWorkoutPage />} />
         <Route path={"user/schedule/:id"} element={<EditSchedulePage />} />
-        <Route path={"client/:id/diet"} element={<DietLargePage />} />
       </Routes>
     </div>
   );
