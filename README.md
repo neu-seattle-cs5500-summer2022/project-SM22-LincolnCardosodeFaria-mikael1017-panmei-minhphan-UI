@@ -1,6 +1,7 @@
 # Gym Management App
 
-[Demo of Gym Management App](https://gymgroup5.herokuapp.com/)
+[Demo of Gym Management App](https://gymgroup5.herokuapp.com/)  
+
 ![](/home.JPG)
 
 ### Summary
@@ -10,11 +11,15 @@ Gym Management App is a website that allows members and staffs interaction.
 
 Click the demo link or clone/download the repository on your local machine.
 
+##### Install NVM and Node.js
+[NVM (Mac and Linux)](https://github.com/nvm-sh/nvm)  
+[NVM-Windows](https://github.com/coreybutler/nvm-windows)
+
 ##### Install dependencies
 
 `npm install`
 
-##### Run Snap Shot from the root directory.
+##### Run from the root directory.
 
 `npm start`
 
@@ -23,6 +28,7 @@ Click the demo link or clone/download the repository on your local machine.
 - React js
 - React Router
 - React Hooks
+- Node.js
 - Fullcalendar API
 - Chart.js API
 
@@ -33,7 +39,6 @@ Click the demo link or clone/download the repository on your local machine.
 
 ### Coming Soon
 
-- 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
